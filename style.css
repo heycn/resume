@@ -1,97 +1,201 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, 'Noto Sans', 'Helvetica Neue', Helvetica, 'Nimbus Sans L', Arial, 'Liberation Sans',
+    'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei',
+    'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp', sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background: #eee;
+  /* margin: 18px 0; */
+}
+
+article {
+  width: 21cm;
+  min-height: 29.7cm;
+  background: white;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 1em;
+}
+
+/* 常规样式 */
+p,
+li {
+  margin: 0.1em 0;
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 26px;
+  margin-bottom: 0;
+  color: #000;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+h2 {
+  font-size: 24px;
+  color: #333333;
+  padding-left: 8px;
+  padding-bottom: 4px;
+  border-left: 4px solid #444;
+  border-bottom: 1px dashed #ccc;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+h4,
+h5,
+h6 {
+  font-weight: normal;
 }
 
-.card {
-  padding: 2em;
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.read-the-docs {
-  color: #888;
+strong {
+  font-weight: normal;
+  color: #f60;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+a {
+  color: #89cbd5;
+  text-decoration: none;
+  border-bottom: 1px solid #518890;
+  margin-right: 0.25em;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+p,
+li {
+  color: #666;
+}
+
+strong {
+  font-weight: normal;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.bio {
+  display: flex;
+  align-items: center;
+}
+
+.bio img {
+  width: 128px;
+  height: 128px;
+  margin-top: 4px;
+  margin-right: 24px;
+}
+
+.bio .wrapper {
+  margin-top: -24px;
+}
+
+/* projects 样式 */
+.projects p {
+  color: #666;
+}
+
+.projects strong {
+  color: #f60;
+}
+
+.projects > ol {
+  margin-top: 0;
+  list-style-position: inside;
+  padding: 0;
+}
+
+.projects > ol > li {
+  margin-bottom: 22px;
+}
+
+.projects > ol > li > header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.projects > ol > li h3 {
+  display: inline-block;
+}
+
+.projects > ol > li h3 > .time {
+  margin-left: 6px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* jobs 样式 */
+.jobs > ol > li {
+  margin-bottom: 20px;
+}
+
+.jobs header {
+  display: flex;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.jobs header > h3 {
+  font-size: 18px;
+  color: #333;
+}
+
+.jobs header > h4 {
+  margin-left: 1em;
+  font-size: 18px;
+}
+
+.jobs header > span {
+  font-size: 18px;
+  margin-left: auto;
+}
+
+/*  开源项目 */
+.openSource > ul > li {
+  margin: 12px 0;
+}
+
+/* 教育信息 */
+.education span {
+  padding-right: 1em;
+  color: #666;
+}
+
+/* 适配移动端 */
+@media (max-width: 500px) {
+  body {
+    margin: 0;
   }
-  a:hover {
-    color: #747bff;
+
+  article {
+    width: auto;
+    height: auto;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .bio img {
+    display: none;
+  }
+
+  .skills .wrapper {
+    flex-direction: column;
+  }
+
+  #skills {
+    width: auto;
+  }
+  .jobs header {
+    flex-direction: column;
+  }
+  .jobs header > h3,
+  .jobs header > h4,
+  .jobs header > span {
+    margin: 0;
   }
 }
