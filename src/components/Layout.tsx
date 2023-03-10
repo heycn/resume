@@ -39,19 +39,13 @@ const Avatar: React.FC<{ src: string }> = ({ src }) => (
   </div>
 )
 
-export const Layout: React.FC<Props> = ({
-  avatar, children, fullName, basics: b, contacts: c
-}) => {
-
+export const Layout: React.FC<Props> = ({ avatar, children, fullName, basics: b, contacts: c }) => {
   const contactList = [
     { icon: icon_wechat, value: c.wechat },
     { icon: icon_phone, value: c.phone },
     { icon: icon_email, value: c.email }
   ]
-
-  const basicsList = [
-    b.jobTitle, `${new Date().getFullYear() - b.birthYear}岁`, genderMap[b.gender]
-  ]
+  const basicsList = [b.jobTitle, `${new Date().getFullYear() - b.birthYear}岁`, genderMap[b.gender]]
 
   return (
     <article className='bg-white w-21cm min-h-29.7cm p-5'>
