@@ -14,7 +14,7 @@ const socialLinks: Props[] = [
 export const App: React.FC = () => {
   return (
     <Layout
-      fullNam='陈楠'
+      fullName='陈楠'
       avatar={avatar}
       basics={basics}
       contacts={contacts}
