@@ -19,6 +19,7 @@
 | basics `必填`   | 基础信息                       | string[]                               | -      | -      |
 | contacts `必填` | 联系方式                       | string[]                               | -      | -      |
 | socialLinks     | 社交链接，参考 Link 的参数类型 | object[] `object 参考 Link 的参数类型` | -      | -      |
+| linkStrong      | 设置社交链接可跳转文本是否加粗 | boolean                                | -      | true   |
 
 ### Link
 
@@ -28,3 +29,4 @@
 | label        | 链接描述文本内容，注意是不可点击部分！   | string / number | -            | -      |
 | direction    | title 相对于 label 的方向                | string          | left / right | left   |
 | href `必填`  | 跳转目标的链接                           | string          | -            | -      |
+| strong       | 设置 title 文本是否加粗                  | boolean         | -            | true   |
