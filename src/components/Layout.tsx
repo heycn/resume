@@ -22,8 +22,8 @@ export const Layout: React.FC<Props> = ({
   avatar, children, fullName, linkStrong,
   basics, contacts, socialLinks
 }) => (
-  <article className='w-21cm b-black b-1 min-h-29.7cm p-1em'>
-    <header flex>
+  <article className='bg-white w-21cm min-h-29.7cm p-5'>
+    <header flex p-b-4 p-t-4>
       <Avatar src={avatar} />
       <section m-l-2em flex flex-col justify-between>
         <h1 c-black fw-900 text-size-2em>{fullName}</h1>
@@ -36,6 +36,8 @@ export const Layout: React.FC<Props> = ({
         ))}
       </section>
     </header>
-    {children}
+    <main>
+      {children}
+    </main>
   </article>
 )

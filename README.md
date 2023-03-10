@@ -30,3 +30,7 @@
 | direction    | title 相对于 label 的方向                | string          | left / right | left   |
 | href `必填`  | 跳转目标的链接                           | string          | -            | -      |
 | strong       | 设置 title 文本是否加粗                  | boolean         | -            | true   |
+
+### Label
+
+直接使用，和 `<p></p>` 用法一样
