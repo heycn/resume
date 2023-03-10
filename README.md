@@ -21,3 +21,10 @@
 | socialLinks     | 社交链接，参考 Link 的参数类型 | object[] `object 参考 Link 的参数类型` | -      | -      |
 
 ### Link
+
+| 参数         | 说明                                     | 类型            | 可选值       | 默认值 |
+| ------------ | ---------------------------------------- | --------------- | ------------ | ------ |
+| title `必填` | 链接可点击部分的文本，注意是可点击部分！ | string / number | -            | -      |
+| label        | 链接描述文本内容，注意是不可点击部分！   | string / number | -            | -      |
+| direction    | title 相对于 label 的方向                | string          | left / right | left   |
+| href `必填`  | 跳转目标的链接                           | string          | -            | -      |
