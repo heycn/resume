@@ -9,6 +9,7 @@ type Props = {
   basics: string[]
   contacts: string[]
   socialLinks?: LinkType[]
+  linkStrong?: boolean
 }
 
 const Avatar: React.FC<{ src: string }> = ({ src }) => (
@@ -18,7 +19,7 @@ const Avatar: React.FC<{ src: string }> = ({ src }) => (
 )
 
 export const Layout: React.FC<Props> = ({
-  avatar, children, fullName,
+  avatar, children, fullName, linkStrong,
   basics, contacts, socialLinks
 }) => (
   <article className='w-21cm b-black b-1 min-h-29.7cm p-1em'>
@@ -30,7 +31,7 @@ export const Layout: React.FC<Props> = ({
         <p>{contacts?.join(' | ')}</p>
         {socialLinks?.map(s => (
           <p>
-            <Link title={s.title} href={s.href} direction={s?.direction} label={s?.label} />
+            <Link title={s.title} href={s.href} direction={s?.direction} label={s?.label} strong={linkStrong} />
           </p>
         ))}
       </section>

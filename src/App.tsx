@@ -19,6 +19,7 @@ export const App: React.FC = () => {
       basics={basics}
       contacts={contacts}
       socialLinks={socialLinks}
+      linkStrong={false}
     >
     </Layout>
   )
