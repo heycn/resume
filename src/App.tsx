@@ -1,13 +1,10 @@
 import * as React from 'react'
-import { Layout } from './components/Layout'
 import avatar from './assets/avatar.jpg'
-import { Props } from './components/Link'
-import { Card } from './components/Card'
-import { Label } from './components/Label'
+import { Props as LinkType } from './components/Link'
 import { BasicsType } from './components/Layout'
-import {Link} from './components/Link'
+import { Layout, Card, Label, Link, Job } from './components'
 
-const socialLinks: Props[] = [
+const socialLinks: LinkType[] = [
   { href: 'https://juejin.cn/user/4372092371864984/posts', title: '掘金链接', label: '目前已有 70 篇技术博客，文章被阅读量 1.5w+', direction: 'right' },
   { href: 'https://github.com/heycn', title: 'GitHub 链接', label: '我的 GitHub 过去一年有 2000 次 commit', direction: 'right' }
 ]
@@ -38,6 +35,23 @@ export const App: React.FC = () => {
           是一种基于原型、多范式、单线程的动态语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。
           {/* 平时喜欢写一些有趣的项目，包括这份简历，是我使用 React + TSX + Unocss 写的 */}
         </Label>
+      </Card>
+      <Card title='工作经验'>
+        <Job
+          company='阿里巴巴'
+          startTime='2020.07'
+          endTime='至今'
+          jobTitle='前端工程师'
+          location= '杭州'
+        >
+          {/* TODO: 封装 Lists 和 List */}
+          <ul>
+            <li>hihihihihi</li>
+            <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
+          </ul>
+        </Job>
+      </Card>
+      <Card title='项目经验'>
       </Card>
     </Layout>
   )

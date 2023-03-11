@@ -11,17 +11,19 @@ export const Card: React.FC<Props> = ({ children, title, titleType = 'default' }
     <section m-t-3 m-b-3>
       {/* DefaultTitle */}
       {titleType === 'default' && (
-        <h3 m-t-6 m-b-3 fw-600>
+        <h4 m-t-6 m-b-2 fw-600 text-size-18px >
           <span bg-black c-white p-l-1 p-r-2 p-t-1 p-b-1>
             {title}
           </span>
-        </h3>
+        </h4>
       )}
       {/* LineTitle */}
       {/* <h2>
         <span>SimpleTitle</span>
       </h2> */}
-      {children}
+      <div p-l-1em>
+        {children}
+      </div>
     </section>
   )
 }

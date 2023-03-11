@@ -2,16 +2,22 @@
 *::after,*::before {box-sizing: border-box;}
 a {color: inherit; text-decoration: none;}
 h1, h2, h3, h4, h5, h6 {font-weight: normal;}
-ol, ul {list-style: none;}
+ol, ul {list-style: none;color: #000;padding-left: 1em;}
 button, input {font: inherit;}
 html {
   color: #333;
   background: #f2f4f5;
   font-size: 16px;
   font-family: -apple-system, Helvetica, Arial, 'Liberation Sans', 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans SC', 'Source Han Sans CN', 'Microsoft YaHei', 'Wenquanyi Micro Hei', 'WenQuanYi Zen Hei', 'ST Heiti', SimHei, 'WenQuanYi Zen Hei Sharp',
-    sans-serif;
+    sans-serif monospace;
   // font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  // font-family: 'Nunito Sans', "Helvetica Neue", Helvetica, Arial, 'Noto Sans SC', sans-serif;
   line-height: 1.42;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 body {display: flex; flex-direction: column; justify-content: center; align-items: center;}
 :focus {outline: none;}
@@ -23,5 +29,10 @@ a {
   background-size: 6px 1px;
   background-repeat: repeat-x;
   background-position: 0 100%;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
+}
+li::before {
+  content: "\25E6"; color: #000;
+  display: inline-block; width: 1em;
+  margin-left: -1em
 }
