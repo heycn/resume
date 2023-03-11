@@ -18,3 +18,10 @@ body {display: flex; flex-direction: column; justify-content: center; align-item
 ::-webkit-scrollbar {display: none;}
 strong {color: #333;}
 a:hover {color: #2a6496;}
+a {
+  background-image: linear-gradient(to right, #777 0%, #777 50%, transparent 50%);
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  padding-bottom: 3px;
+}

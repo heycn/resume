@@ -16,12 +16,12 @@ export const Link: React.FC<Props> = ({
     {direction === 'right' && <span m-r-8px>{label}</span>}
     {strong ? (
       <strong>
-        <a href={href} target='_blank' b-b-dashed className='b-#0005'>
+        <a href={href} target='_blank'>
           {title}
         </a>
       </strong>
     ) : (
-      <a href={href} target='_blank' b-b-dashed className='b-#0005'>
+      <a href={href} target='_blank'>
         {title}
       </a>
     )}
