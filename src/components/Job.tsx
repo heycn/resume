@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { Label } from '.'
+import { convert } from '../lib/convert'
 
 type Props = {
   company: string
@@ -29,21 +30,7 @@ export const Job: React.FC<Props> = ({
         </div>
       </Label>
       <ul>
-        {details.map((detail, index) => {
-          const strongText = detail.match(/\*\*(.*?)\*\*/g),
-                strongTextList = strongText ? strongText.map(item => item.replace(/\*\*/g, '')) : [],
-                textList = detail.split(/\*\*(.*?)\*\*/g)
-          return (
-            <li key={index}>
-              {textList.map((text, index) => {
-                if (strongTextList.includes(text)) {
-                  return <strong key={index}>{text}</strong>
-                }
-                return <span key={index}>{text}</span>
-              })}
-            </li>
-          )
-        })}
+        {details.map(d => convert(d))}
       </ul>
     </div>
   )

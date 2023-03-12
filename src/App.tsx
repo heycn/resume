@@ -18,6 +18,17 @@ const basics: BasicsType = {
   birthYear: 2000,
   gender: 'male'
 }
+const lhcJobDetails = ['TODO']
+const bsJobDetails = ['TODO']
+const neteaseJobDetails = [
+  '负责团队**工具开发，前端界面的拼接、UI 动画制作**',
+  '负责 UI 资源库**管理、迭代、测试、优化与维护**，制作流程文档撰写',
+  '一下 [你好](baidu.com)'
+]
+const palJobDetails = [
+  '担任：思想骨干、副班长、风气监督员',
+  '荣获：优秀士兵、年度嘉奖、三等功班、训练标兵、比武第一名'
+]
 
 export const App: React.FC = () => {
   return (
@@ -38,15 +49,25 @@ export const App: React.FC = () => {
       </Card>
       <Card title='工作经验'>
         <Job
-          company='阿里巴巴'
-          startTime='2020.07'
-          endTime='至今'
-          jobTitle='前端工程师'
-          location= '杭州'
-          details={[
-            '你好你好，我**加粗了**，我**又加粗**了',
-            '你好你好，我没加粗'
-          ]}/>
+          company='令狐充' jobTitle='前端工程师'
+          startTime='2022.10' endTime='至今'
+          location= '中山' details={lhcJobDetails}
+        />
+        <Job
+          company='博森科技' jobTitle='前端工程师'
+          startTime='2022.03' endTime='2022.10'
+          location= '广州' details={bsJobDetails}
+        />
+        <Job
+          company='网易游戏' jobTitle='游戏前端｜UI'
+          startTime='2021.03' endTime='2022.03'
+          location= '广州' details={neteaseJobDetails}
+        />
+        <Job
+          company='中国人民解放军' jobTitle='战士'
+          startTime='2018.09' endTime='2022.10'
+          details={palJobDetails}
+        />
       </Card>
       <Card title='项目经验'>
       </Card>
