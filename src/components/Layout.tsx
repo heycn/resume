@@ -52,23 +52,23 @@ export const Layout: React.FC<Props> = ({
   const basicsList = [b.jobTitle, `${new Date().getFullYear() - b.birthYear}岁`, genderMap[b.gender]]
 
   return (
-    <article className='bg-white w-21cm min-h-29.7cm p-5 p-l-4'>
-      <header flex items-center p-b-4 p-t-4 p-l-1em>
+    <article className='bg-white w-210mm min-h-297mm p-8'>
+      <header flex items-center p-b-4>
         <Avatar src={avatar} />
         <section h-35mm m-l-2em flex flex-col justify-between>
           <h1 c-black fw-900 text-size-2em>{fullName}</h1>
           <div>
             <p>{basicsList.join(' | ')}</p>
             <p flex items-center>
-              {contactList.map(c => (
-                <span key={c.icon} flex items-center m-r-1em>
-                  <img src={c.icon} w-4 m-r-1 />
+              {contactList.map((c, i) => (
+                <span key={i} flex items-center m-r-1em>
+                  <img src={c.icon} h-4 m-r-1 />
                   {c.value}
                 </span>
               ))}
             </p>
-            {socialLinks?.map(s => (
-              <p>
+            {socialLinks?.map((s, i) => (
+              <p key={i} >
                 <Link title={s.title} href={s.href} direction={s?.direction} label={s?.label} strong={false} />
               </p>
             ))}

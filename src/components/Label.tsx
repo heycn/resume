@@ -6,7 +6,7 @@ type Props = {
 
 export const Label: React.FC<Props> = ({ children }) => {
   return (
-    <p itemProp='description' p-b-2 p-t-2 break-words>
+    <p p-b-2 p-t-2 break-words>
       {children}
     </p>
   )

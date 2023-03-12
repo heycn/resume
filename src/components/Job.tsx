@@ -13,24 +13,23 @@ type Props = {
 
 export const Job: React.FC<Props> = ({
   company, startTime, endTime,
-  jobTitle, location, details
+  jobTitle, details
 }) => {
-  const hasLocation = location ? ` | ${location}` : ``
-  const timeAndlocation = `${startTime} - ${endTime}${hasLocation}`
+  const workTime = `${startTime} - ${endTime}`
 
   return (
-    <div p-t-3 p-b-3>
+    <div className='p-t-1.5 p-b-1.5'>
       <Label>
-        <div>
-          <strong>{company}</strong>
-          <span className='c-#777 m-l-.5em'>{jobTitle}</span>
-        </div>
-        <div>
-          <span className='c-#777 text-size-.85em'>{timeAndlocation}</span>
+        <div flex justify-between >
+          <div>
+            <strong>{company}</strong>
+            <span className='c-#777 m-l-.5em text-size-.9em'>{jobTitle}</span>
+          </div>
+          <span className='c-#777 text-size-.9em'>{workTime}</span>
         </div>
       </Label>
       <ul>
-        {details.map(d => convert(d))}
+        {details.map((d, i) => <li key={i} p-l-2 >{convert(d)}</li>)}
       </ul>
     </div>
   )

@@ -14,5 +14,5 @@ export const convert: (text: string) => JSX.Element = (text: string) => {
     result = result.replace(match, `<a href="${linkHref}">${linkTitle}</a>`)
   }
 
-  return <li dangerouslySetInnerHTML={{ __html: result }}></li>
+  return <span dangerouslySetInnerHTML={{ __html: result }} />
 }
