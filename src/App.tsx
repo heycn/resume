@@ -43,13 +43,10 @@ export const App: React.FC = () => {
           endTime='至今'
           jobTitle='前端工程师'
           location= '杭州'
-        >
-          {/* TODO: 封装 Lists 和 List */}
-          <ul>
-            <li>hihihihihi</li>
-            <li>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</li>
-          </ul>
-        </Job>
+          details={[
+            '你好你好，我**加粗了**，我**又加粗**了',
+            '你好你好，我没加粗'
+          ]}/>
       </Card>
       <Card title='项目经验'>
       </Card>
