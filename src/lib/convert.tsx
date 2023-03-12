@@ -1,17 +1,17 @@
 export const convert: (text: string) => JSX.Element = (text: string) => {
-  const bold_regex: RegExp = /\*\*(.*?)\*\*/g
-  const link_regex: RegExp = /\[(.*?)\]\((.*?)\)/g
-  let bold_matches: RegExpExecArray | null
-  let link_matches: RegExpExecArray | null
+  const boldRegex: RegExp = /\*\*(.*?)\*\*/g
+  const linkRegex: RegExp = /\[(.*?)\]\((.*?)\)/g
+  let boldMatches: RegExpExecArray | null
+  let linkMatches: RegExpExecArray | null
   let result: string = text
   // 将 ** 加粗
-  while ((bold_matches = bold_regex.exec(text)) !== null) {
-    result = result.replace(`**${bold_matches[1]}**`, `<strong>${bold_matches[1]}</strong>`)
+  while ((boldMatches = boldRegex.exec(text)) !== null) {
+    result = result.replace(`**${boldMatches[1]}**`, `<strong>${boldMatches[1]}</strong>`)
   }
   // 高亮链接信息
-  while ((link_matches = link_regex.exec(result)) !== null) {
-    const [match, link_title, link_href] = link_matches
-    result = result.replace(match, `<a href="${link_href}">${link_title}</a>`)
+  while ((linkMatches = linkRegex.exec(result)) !== null) {
+    const [match, linkTitle, linkHref] = linkMatches
+    result = result.replace(match, `<a href="${linkHref}">${linkTitle}</a>`)
   }
 
   return <li dangerouslySetInnerHTML={{ __html: result }}></li>

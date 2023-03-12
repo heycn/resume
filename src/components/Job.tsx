@@ -23,10 +23,10 @@ export const Job: React.FC<Props> = ({
       <Label>
         <div>
           <strong>{company}</strong>
-          <span className='c-#777 m-l-0.3em'>{jobTitle}</span>
+          <span className='c-#777 m-l-.5em'>{jobTitle}</span>
         </div>
         <div>
-          <span className='c-#777 text-size-0.85em'>{timeAndlocation}</span>
+          <span className='c-#777 text-size-.85em'>{timeAndlocation}</span>
         </div>
       </Label>
       <ul>

@@ -19,11 +19,17 @@ const basics: BasicsType = {
   gender: 'male'
 }
 const lhcJobDetails = ['TODO']
-const bsJobDetails = ['TODO']
+const bsJobDetails = [
+  // TODO:重写/过于啰嗦
+  '独立负责部门**前端项目的开发与维护**，包括 PC 端与**移动端**、主要使用**React + TypeScript**开发',
+  '负责**Web3、智能量化**相关项目的开发、重构、维护与迭代',
+  '协同后端开发团队完成**接口对接和联调**，按时按量完成项目开发任务',
+  '负责与产品组配合，深度参与产品需求讨论，功能定义等',
+  '制定团队**代码规范**，建立起开发质量控制方法，有效提高前端团队的开发效率'
+]
 const neteaseJobDetails = [
   '负责团队**工具开发，前端界面的拼接、UI 动画制作**',
-  '负责 UI 资源库**管理、迭代、测试、优化与维护**，制作流程文档撰写',
-  '一下 [你好](baidu.com)'
+  '负责 UI 资源库**管理、迭代、测试、优化与维护**，制作流程文档撰写'
 ]
 const palJobDetails = [
   '担任：思想骨干、副班长、风气监督员',
@@ -49,7 +55,7 @@ export const App: React.FC = () => {
       </Card>
       <Card title='工作经验'>
         <Job
-          company='令狐充' jobTitle='前端工程师'
+          company='令狐充' jobTitle='前端工程师/负责人'
           startTime='2022.10' endTime='至今'
           location= '中山' details={lhcJobDetails}
         />
