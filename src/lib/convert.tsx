@@ -1,23 +1,17 @@
 export const convert: (text: string) => JSX.Element = (text: string) => {
-  const bold_start = text.indexOf('**')
-  const bold_end = text.indexOf('**', bold_start + 2)
-  const link_start = text.indexOf('(')
-  const link_end = text.indexOf(')')
-  const link_title_start = text.indexOf('[')
-  const link_title_end = text.indexOf(']')
-
-  // 提取加粗文本和链接信息
-  const bold_text = bold_start !== -1 && bold_end !== -1 ? text.substring(bold_start + 2, bold_end) : null
-  const link_href = link_start !== -1 && link_end !== -1 ? text.substring(link_start + 1, link_end) : null
-  const link_title = link_title_start !== -1 && link_title_end !== -1 ? text.substring(link_title_start + 1, link_title_end) : null
-
-  // 将加粗文本和链接信息高亮
-  let result = text
-  if (bold_text) {
-    result = result.replace(`**${bold_text}**`, `<strong>${bold_text}</strong>`)
+  const bold_regex: RegExp = /\*\*(.*?)\*\*/g
+  const link_regex: RegExp = /\[(.*?)\]\((.*?)\)/g
+  let bold_matches: RegExpExecArray | null
+  let link_matches: RegExpExecArray | null
+  let result: string = text
+  // 将 ** 加粗
+  while ((bold_matches = bold_regex.exec(text)) !== null) {
+    result = result.replace(`**${bold_matches[1]}**`, `<strong>${bold_matches[1]}</strong>`)
   }
-  if (link_href) {
-    result = result.replace(`[${link_title}](${link_href})`, `<a href="${link_href}">${link_title}</a>`)
+  // 高亮链接信息
+  while ((link_matches = link_regex.exec(result)) !== null) {
+    const [match, link_title, link_href] = link_matches
+    result = result.replace(match, `<a href="${link_href}">${link_title}</a>`)
   }
 
   return <li dangerouslySetInnerHTML={{ __html: result }}></li>
