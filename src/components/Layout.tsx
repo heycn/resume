@@ -4,11 +4,13 @@ import icon_phone from '../assets/phone.svg'
 import icon_email from '../assets/email.svg'
 import { Link} from '.'
 import { Props as LinkType } from './Link'
+import { convert } from '../lib/convert'
 
 export type BasicsType = {
   jobTitle: string
   birthYear: number
   gender: 'male' | 'female' | 'trans-female' | 'trans-male' | 'LGBTQ+'
+  other?: string
 }
 
 type Props = {
@@ -23,7 +25,7 @@ type Props = {
     email: string
   }
   basics: BasicsType
-  socialLinks?: LinkType[]
+  other?: string[]
 }
 
 const genderMap = {
@@ -41,25 +43,25 @@ const Avatar: React.FC<{ src: string }> = ({ src }) => (
 )
 
 export const Layout: React.FC<Props> = ({
-  avatar, children, fullName,
-  basics: b, contacts: c, socialLinks
+  avatar, children, fullName, other,
+  basics: b, contacts: c,
 }) => {
   const contactList = [
     { icon: icon_wechat, value: c.wechat },
     { icon: icon_phone, value: c.phone },
     { icon: icon_email, value: <Link href={`mailto:${c.email}`} title={c.email} strong={false} />}
   ]
-  const basicsList = [b.jobTitle, `${new Date().getFullYear() - b.birthYear}岁`, genderMap[b.gender]]
+  const basicsList = [b.jobTitle, `${new Date().getFullYear() - b.birthYear}岁`, genderMap[b.gender], b.other]
 
   return (
-    <article className='bg-white w-210mm min-h-297mm p-8 p-r-10'>
+    <article className='bg-white w-210mm min-h-297mm p-8 p-r-10 p-b-0'>
       <header flex items-center p-b-5>
         <Avatar src={avatar} />
         <section h-35mm m-l-2em flex flex-col justify-between>
           <h1 c-black fw-900 text-size-2em>{fullName}</h1>
           <div>
             <p>{basicsList.join(' | ')}</p>
-            <p flex items-center>
+            <p className='h-1.5em flex items-center'>
               {contactList.map((c, i) => (
                 <span key={i} flex items-center m-r-1em>
                   <img src={c.icon} h-4 m-r-1 />
@@ -67,10 +69,8 @@ export const Layout: React.FC<Props> = ({
                 </span>
               ))}
             </p>
-            {socialLinks?.map((s, i) => (
-              <p key={i} >
-                <Link title={s.title} href={s.href} direction={s?.direction} label={s?.label} strong={false} />
-              </p>
+            {other?.map((o, i) => (
+              <p key={i} className='h-1.5em'>{convert(o)}</p>
             ))}
           </div>
         </section>

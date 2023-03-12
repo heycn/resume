@@ -2,11 +2,16 @@ import * as React from 'react'
 import avatar from './assets/avatar.jpg'
 import { Props as LinkType } from './components/Link'
 import { BasicsType } from './components/Layout'
-import { Layout, Card, Label, Link, Job, Skills } from './components'
+import { Layout, Card, Job, Skills } from './components'
 
-const socialLinks: LinkType[] = [
-  { href: 'https://juejin.cn/user/4372092371864984/posts', title: '掘金链接', label: '目前已有 70 篇技术博客，文章被阅读量 1.5w+', direction: 'right' },
-  { href: 'https://github.com/heycn', title: 'GitHub 链接', label: '我的 GitHub 过去一年有 2000 次 commit', direction: 'right' }
+const aboutMe = `
+  退役军人，超过 ${new Date().getFullYear() - 2021} 年的前端开发经验，同时也懂一些后端与设计，完全具备独立开发能力<br/>
+  具有 Geek 精神，爱折腾，比如精通 Vim、双拼。爱学习，有写博客的习惯，目前已有 70 篇技术博客<br/>
+  业余喜欢在 GitHub 写一些有趣的项目，包括这份简历，是我使用 React + TSX + Unocss 写的
+`
+const other = [
+  `写过 70 篇技术博客，被阅读量 1.5万+ [掘金链接](https://juejin.cn/user/4372092371864984/posts) | [个人网站](https://heycn.github.io/)`,
+  `我的 GitHub 过去一年有 2000 次 commit [GitHub 链接](https://github.com/heycn)`
 ]
 const contacts = {
   wechat: 'heycn1',
@@ -14,9 +19,10 @@ const contacts = {
   email: 'heycn@foxmail.com'
 }
 const basics: BasicsType = {
-  jobTitle: '前端开发工程师',
+  jobTitle: '前端工程师',
   birthYear: 2000,
-  gender: 'male'
+  gender: 'male',
+  other: '退役军人'
 }
 const lhcJobDetails = [
   // TODO
@@ -26,8 +32,8 @@ const lhcJobDetails = [
 ]
 const bsJobDetails = [
   // TODO:重写/过于啰嗦
-  '负责**前端项目的开发、维护与迭代**，包括 PC 端与**移动端**、主要使用**React/Vue3/TypeScript**',
-  '负责全部门 UI 框架的开发，包括对话框、树形组件、日期选择器等常用组件',
+  '独立负责部门**前端开发**与**技术文档撰写**，主要使用**React/Vue3/TypeScript**',
+  '负责部门 UI 框架开发，包括 Tab、**轮播组件**、**进度条**、**树形组件**、**日期选择器** 等常用组件',
   '定期组织内部分享，包括**Vim 的使用、ECMAScript 新特性、TypeScript**等话题',
 ]
 const neteaseJobDetails = [
@@ -40,11 +46,14 @@ const palJobDetails = [
 ]
 
 const skills = [
-  '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
-  '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
-  '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
-  '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
-  '哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈',
+  '拥有 独立开发项目 的能力，以及良好的 编码品味，善于业务 组件的封装，便于复用',
+  '熟悉并且能够编写 语义化的 HTML，模块化的 CSS，包括 SASS / LESS',
+  '掌握 TypeScript 的使用，熟悉 ECMAScript 新特性，我把常用的特性总结成一篇 博客',
+  '掌握 React 全家桶 的使用，包括 create-react-app、styled-component、ReactRouter、SWR 等',
+  '掌握 Vue 的使用，包括 Vue3、VueCli、VueRouter、Vuepress 等',
+  '了解 前后端分离 技术，包括 AJAX、同源策略、MVC、HTTP、Session、Cookie 等',
+  '了解 Vite、Webpack 的配置，在项目中我写过一个 Vite 插件，并将其思路总结成一篇 博客',
+  '工具类：Vim、Git、SVN、Markdown、Zsh、Figma'
 ]
 
 export const App: React.FC = () => {
@@ -55,15 +64,9 @@ export const App: React.FC = () => {
       contacts={contacts}
       avatar={avatar}
       basics={basics}
-      socialLinks={socialLinks}
+      other={other}
     >
-      <Card
-        title='关于我'
-        aboutMe='
-          My name is Anthony Fu, a master of computer science student and a freelance software engineer. My passion for software lies with dreaming up ideas and making them come true with elegant interfaces. I take great care in the experience, architecture, and code quality of the things I build.
-        '
-        // 平时喜欢写一些有趣的项目，包括这份简历，是我使用 React + TSX + Unocss 写的
-      />
+      <Card title='关于我' aboutMe={aboutMe} />
       <Card title='工作经历'>
         <Job
           company='令狐充' jobTitle='前端工程师/负责人'
@@ -76,7 +79,7 @@ export const App: React.FC = () => {
           location= '广州' details={bsJobDetails}
         />
         <Job
-          company='网易游戏' jobTitle='游戏前端｜UI'
+          company='网易' jobTitle='游戏前端｜UI'
           startTime='2021.03' endTime='2022.03'
           location= '广州' details={neteaseJobDetails}
         />

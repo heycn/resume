@@ -22,7 +22,7 @@ export const Card: React.FC<Props> = ({ children, title, titleType = 'default', 
       )}
       <div p-l-1>
         {aboutMe
-          ? <div p-l-2 p-t-1 >
+          ? <div p-t-1 >
               <Label>{convert(aboutMe)}</Label>
             </div>
           : children
