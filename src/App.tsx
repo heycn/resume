@@ -16,7 +16,7 @@ const other = [
 const contacts = {
   wechat: 'heycn1',
   phone: '18888888888',
-  email: 'heycn@foxmail.com'
+  email: 'heycn112@gmail.com'
 }
 const basics: BasicsType = {
   jobTitle: '前端工程师',
