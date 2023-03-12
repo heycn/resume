@@ -74,8 +74,12 @@ li::before {
   width: 1em;
   margin-left: -1em;
 }
-li > strong,
-p > strong {
+span > strong {
   padding-left: 0.16em;
   padding-right: 0.16em;
+}
+@media print {
+  html {
+    background: #fff !important;
+  }
 }
