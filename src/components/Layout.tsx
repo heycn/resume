@@ -52,8 +52,8 @@ export const Layout: React.FC<Props> = ({
   const basicsList = [b.jobTitle, `${new Date().getFullYear() - b.birthYear}岁`, genderMap[b.gender]]
 
   return (
-    <article className='bg-white w-210mm min-h-297mm p-8'>
-      <header flex items-center p-b-4>
+    <article className='bg-white w-210mm min-h-297mm p-8 p-r-10'>
+      <header flex items-center p-b-5>
         <Avatar src={avatar} />
         <section h-35mm m-l-2em flex flex-col justify-between>
           <h1 c-black fw-900 text-size-2em>{fullName}</h1>

@@ -60,12 +60,11 @@ export const App: React.FC = () => {
       <Card
         title='关于我'
         aboutMe='
-          JavaScript（JS）是一种具有函数优先特性的轻量级、解释型或者说即时编译型的编程语言。虽然作为 Web 页面中的脚本语言被人所熟知，但是它也被用到了很多非浏览器环境中，例如 Node.js、Apache CouchDB、Adobe Acrobat 等。进一步说，JavaScript
-          是一种基于原型、多范式、单线程的动态语言，并且支持面向对象、命令式和声明式（如函数式编程）风格。
+          My name is Anthony Fu, a master of computer science student and a freelance software engineer. My passion for software lies with dreaming up ideas and making them come true with elegant interfaces. I take great care in the experience, architecture, and code quality of the things I build.
         '
         // 平时喜欢写一些有趣的项目，包括这份简历，是我使用 React + TSX + Unocss 写的
       />
-      <Card title='工作经验'>
+      <Card title='工作经历'>
         <Job
           company='令狐充' jobTitle='前端工程师/负责人'
           startTime='2022.10' endTime='至今'
